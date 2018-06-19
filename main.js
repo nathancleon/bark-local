@@ -1,10 +1,36 @@
-var map
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 38.9907, lng: -77.0261},
-          zoom: 12
-        });
+let map;
+
+function initialize() {
+
+  let latlng = new google.maps.LatLng(38.9907, -77.0261);
+  let myOptions = {
+    center: latlng,
+    zoom: 12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById("map"), myOptions);
+  zipcodeInput();
+}
+
+function codeAddress(address) {
+  let geocoder = new google.maps.Geocoder();
+  geocoder.geocode( {address:address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+    } else {
+        alert('Geocode was not successful for the following reason: ' + status);
       }
+  });
+  initialize();
+}
+
+function zipcodeInput() {
+  $('#js-form-submit').on('click', '.js-btn-submit', function() {
+    event.preventDefault();
+    let zipCode = $('#js-zipcode-val').val();
+    codeAddress(zipCode);
+  });
+}
 
 //project set up:
 //  store zipcode entered as lat long using google geocoding
