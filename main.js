@@ -62,7 +62,6 @@ function fourSquareGet() {
     $.getJSON(FOURSQUARE_ENDPOINT + latitude + ',' + longitude + '&query=dog+park&client_id=' + FOURSQUARE_ID + 
         '&client_secret=' + FOURSQUARE_CLIENT_SECRET + FOURSQUARE_VERSION,
         function(data) {
-            console.log(data);
             let venuesHtml = "";
             data.response.venues.forEach(function(venue) {
                 let venueHtml = displayResult(venue);
@@ -73,25 +72,25 @@ function fourSquareGet() {
                     title: venue.name
                 });
                 marker.setMap(map);
-            }); 
-            console.log(venuesHtml);
+            });
+            $('#map').show(); 
             $('.js-foursquare-results').html(venuesHtml);
     });
 }
 
 function displayResult(venue) {
-    let venueHtml = `<h1>${venue.name}</h1><h3>`;
+    let venueHtml = `<div><h1>${venue.name}</h1><p>`;
     
     if(venue.location.formattedAddress[0]) {
-        venueHtml += `${venue.location.formattedAddress[0]}`;
+        venueHtml += `<p>${venue.location.formattedAddress[0]}</p>`;
     }
     if(venue.location.formattedAddress[1]) {
-        venueHtml += `${venue.location.formattedAddress[1]}`;
+        venueHtml += `<p>${venue.location.formattedAddress[1]}</p>`;
     }
     if(venue.location.formattedAddress[2]) {
-        venueHtml += `${venue.location.formattedAddress[2]}`;
+        venueHtml += `<p>${venue.location.formattedAddress[2]}</p>`;
     }
-    venueHtml += `</h3>`;
+    venueHtml += `</div>`;
 
     return venueHtml;
 }
