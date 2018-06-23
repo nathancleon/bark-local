@@ -72,6 +72,14 @@ function fourSquareGet() {
                     title: venue.name
                 });
                 marker.setMap(map);
+
+                let infowindow = new google.maps.InfoWindow({
+                  content: venueHtml
+                });
+
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
             });
             $('#map').show(); 
             $('.js-foursquare-results').html(venuesHtml);
@@ -79,7 +87,7 @@ function fourSquareGet() {
 }
 
 function displayResult(venue) {
-    let venueHtml = `<div><h1>${venue.name}</h1><p>`;
+    let venueHtml = `<div><h3>${venue.name}</h3><p>`;
     
     if(venue.location.formattedAddress[0]) {
         venueHtml += `<p>${venue.location.formattedAddress[0]}</p>`;
