@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bark Local</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
         <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -15,11 +17,9 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <form id="js-form-submit">
-            <label>
-                <span>Enter your Zipcode</span>
-                <input type="text" id="js-zipcode-val" placeholder="Zipcode">
-            </label>
+        <form class="form-submit">
+            <label for="js-zipcode-val">Enter your Zipcode</label>
+            <input type="text" id="js-zipcode-val" placeholder="Zipcode">
             <button type="submit" class="btn btn-submit js-btn-submit">Submit</button>
         </form>
         <div id="map"></div>

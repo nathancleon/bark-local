@@ -48,7 +48,7 @@ function codeAddress(address) {
 }
 
 function zipcodeInput() {
-  $('#js-form-submit').on('click', '.js-btn-submit', function() {
+  $('form').on('click', '.js-btn-submit', function() {
     event.preventDefault();
     let zipCode = $('#js-zipcode-val').val();
     codeAddress(zipCode);
@@ -87,18 +87,18 @@ function fourSquareGet() {
 }
 
 function displayResult(venue) {
-    let venueHtml = `<div><h3>${venue.name}</h3><p>`;
+    let venueHtml = `<div class="js-result"><h3 class="js-result-title">${venue.name}</h3><ul class="js-result-content">`;
     
     if(venue.location.formattedAddress[0]) {
-        venueHtml += `<p>${venue.location.formattedAddress[0]}</p>`;
+        venueHtml += `<li class="js-address">${venue.location.formattedAddress[0]},&nbsp;</li>`;
     }
     if(venue.location.formattedAddress[1]) {
-        venueHtml += `<p>${venue.location.formattedAddress[1]}</p>`;
+        venueHtml += `<li class="js-address">${venue.location.formattedAddress[1]},&nbsp;</li>`;
     }
     if(venue.location.formattedAddress[2]) {
-        venueHtml += `<p>${venue.location.formattedAddress[2]}</p>`;
+        venueHtml += `<li class="js-address">${venue.location.formattedAddress[2]}</li>`;
     }
-    venueHtml += `</div>`;
+    venueHtml += `</div></div>`;
 
     return venueHtml;
 }
