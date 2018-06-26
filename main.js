@@ -98,7 +98,7 @@ function displayResult(venue) {
     if(venue.location.formattedAddress[2]) {
         venueHtml += `<li class="js-address">${venue.location.formattedAddress[2]}</li>`;
     }
-    venueHtml += `</div></div>`;
+    venueHtml += `</div>`;
 
     return venueHtml;
 }
