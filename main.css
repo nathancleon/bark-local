@@ -1,10 +1,16 @@
-html, body {
-    background-color: #64caec;
+* {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+}
+
+html {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: #64caec;
+    font-family: 'Roboto', sans-serif;
   }
 
 #map {
@@ -29,7 +35,7 @@ html, body {
     font-weight: bold;
 }
 
-.form-submit > input {
+#js-zipcode-val {
     display: block;
     background-color: inherit;
     border: none;
@@ -40,11 +46,11 @@ html, body {
     border-bottom: 2px solid #fff;
 }
 
-.form-submit > input:focus::placeholder {
+#js-zipcode-val:focus::placeholder {
     color: transparent;
 }
 
-.form-submit > input::placeholder {
+#js-zipcode-val::placeholder {
     color: #fff;
     text-align: center;
     opacity: 0.7;
@@ -58,8 +64,8 @@ label {
     font-size: 1rem;
 }
 
-img {
-    width: 1.8rem;
+.title-icon {
+    width: 1.8\rem;
 }
 
 .btn-submit {
