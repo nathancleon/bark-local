@@ -90,7 +90,7 @@ function fourSquareGet() {
 
 function displayResult(venue) {
 
-    let venueHtml = `<div class="js-result" id="${venue.id}"><h3 class="js-result-title" id="${venue.id}">${venue.name}</h3><ul class="js-result-content">`;
+    let venueHtml = `<div class="js-result" id="${venue.id}"><h3 class="js-result-title" id="${venue.id}">${venue.name}</h3><ul class="js-result-content" id="${venue.id}">`;
     
     if(venue.location.formattedAddress[0]) {
         venueHtml += `<li class="js-result-address" id="${venue.id}">${venue.location.formattedAddress[0]},&nbsp;</li>`;
