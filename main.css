@@ -92,7 +92,7 @@ label {
 }
 
 .title-icon {
-    width: 1.8\rem;
+    width: 1.8rem;
 }
 
 .btn-submit {
@@ -151,7 +151,27 @@ label {
 
 @media screen and (max-width: 400px) {
     .flex-container {
+        width: 100%;
+    }
 
+    .form-submit {
+        min-height: 300px;
+        min-width: 100%;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .title-icon {
+        width: 1.5rem;
+    }
+    
+    label {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.75rem;
+        text-overflow: auto;
     }
 
     .js-post-submit {
