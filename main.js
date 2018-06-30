@@ -1,3 +1,10 @@
+//Need to display geocode errors on page, not as an alert
+//if status = ZERO_RESULTS, state in red by replacing label text with 
+//"No results for this Zipcode"
+//if input value.length > 5 digits display
+//"Invalid Zipcode"
+
+
 let map;
 let latlng;
 let markerInfoMap = {};
@@ -16,6 +23,7 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById("map"), myOptions);
   zipcodeInput();
+  restyleOnSubmit();
 }
 
 function codeAddress(address) {
@@ -38,6 +46,13 @@ function zipcodeInput() {
     let zipCode = $('#js-zipcode-val').val();
     codeAddress(zipCode);
   });
+}
+
+function restyleOnSubmit() {
+    $('form').on('click', '.js-btn-submit', function() {
+        console.log('this should work');
+        $('form').removeClass('form-submit').addClass('js-post-submit');
+    });
 }
 
 function fourSquareGet() {
@@ -84,7 +99,6 @@ function fourSquareGet() {
                 e = e.target || e.srcElement;
                 markerInfoMap[e.id][1].open(map, markerInfoMap[e.id][0]);
             });
-            
     });
 }
 
