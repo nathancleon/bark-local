@@ -41,7 +41,7 @@ function codeAddress(address) {
 }
 
 function zipcodeInput() {
-  $('form').on('click', '.js-btn-submit', function() {
+  $('form').on('click', '.btn-submit', function() {
     event.preventDefault();
     let zipCode = $('#js-zipcode-val').val();
     codeAddress(zipCode);
@@ -49,9 +49,13 @@ function zipcodeInput() {
 }
 
 function restyleOnSubmit() {
-    $('form').on('click', '.js-btn-submit', function() {
+    $('form').on('click', '.btn-submit', function() {
         console.log('this should work');
         $('form').removeClass('form-submit').addClass('js-post-submit');
+        $('h1').removeClass('form-title').addClass('js-form-title');
+        $('img').removeClass('title-icon').addClass('js-title-icon');
+        $('button').addClass('js-btn-submit');
+        $('label').hide();
     });
 }
 
