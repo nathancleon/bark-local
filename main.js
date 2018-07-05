@@ -56,7 +56,11 @@ function restyleOnSubmit() {
 =======
     $('form').on('click', '.btn-submit', function() {
         console.log('this should work');
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> 01147ed99d21c9f1011fc638bb45a0172ef08669
+>>>>>>> error-handling
         $('form').removeClass('form-submit').addClass('js-post-submit');
         $('h1').removeClass('form-title').addClass('js-form-title');
         $('img').removeClass('title-icon').addClass('js-title-icon');
