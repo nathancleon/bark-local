@@ -29,20 +29,11 @@ body {
 
 .js-post-submit {
     display: flex;
-<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.5);
     height: 260px;
-=======
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 15vh;
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> 01147ed99d21c9f1011fc638bb45a0172ef08669
->>>>>>> error-handling
     width: 100%;
     padding-top: 10px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;   
 }
@@ -125,20 +116,6 @@ label {
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 30px;
-}
-
-.js-btn-submit {
-    border: none;
-    min-width: 100px;
-    min-height: 35px;
-    border-radius: 2.5px;
-    background-color: #04cc40;
-    box-shadow: 0 3.5px rgb(0, 139, 42);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-bottom: 20px;
 }
 
 .btn-submit:active {
