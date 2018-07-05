@@ -29,8 +29,8 @@ body {
 
 .js-post-submit {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 240px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 260px;
     width: 100%;
     padding-top: 10px;
     flex-direction: column;
@@ -109,6 +109,14 @@ label {
 .btn-submit:active {
     box-shadow: 0 5px rgb(0, 139, 42);
     transform: translateY(3px);
+}
+
+.zipcode-error {
+    display: none;
+    color: #fff;
+    font-weight: normal;
+    margin-top: -20px;
+    text-align: center;
 }
 
 .js-foursquare-results {

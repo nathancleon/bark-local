@@ -33,8 +33,10 @@ function codeAddress(address) {
         latlng = results[0].geometry.location;
         map.setCenter(latlng);
         fourSquareGet();
+        $('.zipcode-error').hide();
     } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        console.log('Geocode was not successful for the following reason: ' + status);
+        $('.zipcode-error').show();
       }
   });
   initialize();
@@ -50,7 +52,6 @@ function zipcodeInput() {
 
 function restyleOnSubmit() {
     $('form').on('click', '.js-btn-submit', function() {
-        console.log('this should work');
         $('form').removeClass('form-submit').addClass('js-post-submit');
     });
 }
